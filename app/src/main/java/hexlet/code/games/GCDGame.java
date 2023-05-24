@@ -10,7 +10,7 @@ public final class GCDGame {
     public static final int COUNT_OF_QUESTIONS_AND_ANSWERS = 2;
 
     public static void start() {
-        String[][] questionsAndAnswers = new String[Engine.ROUNDS][COUNT_OF_QUESTIONS_AND_ANSWERS];
+        String[][] arr = new String[Engine.ROUNDS][COUNT_OF_QUESTIONS_AND_ANSWERS];
 
         Random random = new Random();
         for (int i = 0; i < Engine.ROUNDS; i++) {
@@ -18,11 +18,11 @@ public final class GCDGame {
             int secondNumber = random.nextInt(MAX_NUMBER) + 1;
             String question = firstNumber + " " + secondNumber;
             String rightAnswer = String.valueOf(calculate(firstNumber, secondNumber));
-            questionsAndAnswers[i][0] = question;
-            questionsAndAnswers[i][1] = rightAnswer;
+            arr[i][0] = question;
+            arr[i][1] = rightAnswer;
         }
 
-        Engine.run(questionsAndAnswers, RULE);
+        Engine.run(arr, RULE);
     }
 
     private static int calculate(int a, int b) {

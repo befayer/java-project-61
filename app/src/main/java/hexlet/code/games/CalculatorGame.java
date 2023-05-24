@@ -11,18 +11,18 @@ public final class CalculatorGame {
     public static final int COUNT_OF_QUESTIONS_AND_ANSWERS = 2;
 
     public static void start() {
-        String[][] questionsAndAnswers = new String[Engine.ROUNDS][COUNT_OF_QUESTIONS_AND_ANSWERS];
+        String[][] arr = new String[Engine.ROUNDS][COUNT_OF_QUESTIONS_AND_ANSWERS];
         Random random = new Random();
 
         for (int i = 0; i < Engine.ROUNDS; i++) {
+            String operator = OPERATORS[random.nextInt(OPERATORS.length)];
             int firstNumber = random.nextInt(MAX_NUMBER) + 1;
             int secondNumber = random.nextInt(MAX_NUMBER) + 1;
-            String operator = OPERATORS[random.nextInt(OPERATORS.length)];
             String question = firstNumber + " " + operator + " " + secondNumber;
-            questionsAndAnswers[i][0] = question;
-            questionsAndAnswers[i][1] = String.valueOf(calculate(firstNumber, secondNumber, operator));
+            arr[i][0] = question;
+            arr[i][1] = String.valueOf(calculate(firstNumber, secondNumber, operator));
         }
-        Engine.run(questionsAndAnswers, RULE);
+        Engine.run(arr, RULE);
     }
 
     private static int calculate(int x, int y, String operator) {

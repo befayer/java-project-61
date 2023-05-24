@@ -10,18 +10,16 @@ public class PrimeGame {
     public static final int COUNT_OF_QUESTIONS_AND_ANSWERS = 2;
 
     public static void start() {
-        var questionsAndAnswers = new String[Engine.ROUNDS][COUNT_OF_QUESTIONS_AND_ANSWERS];
+        var arr = new String[Engine.ROUNDS][COUNT_OF_QUESTIONS_AND_ANSWERS];
 
         Random random = new Random();
         for (int i = 0; i < Engine.ROUNDS; i++) {
             int question = random.nextInt(MAX_NUMBER) + 1;
             String rightAnswer = isPrime(question) ? "yes" : "no";
-
-            questionsAndAnswers[i][0] = String.valueOf(question);
-            questionsAndAnswers[i][1] = rightAnswer;
+            arr[i][0] = String.valueOf(question);
+            arr[i][1] = rightAnswer;
         }
-
-        Engine.run(questionsAndAnswers, RULE);
+        Engine.run(arr, RULE);
     }
 
     private static boolean isPrime(int number) {
