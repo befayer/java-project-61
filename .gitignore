@@ -1,6 +1,3 @@
-/.idea/
-/app.iml
-
 # Ignore Gradle project-specific cache directory
 .gradle
 
@@ -13,3 +10,4 @@ build
 bin
 .project*
 .classpath
+.idea/
