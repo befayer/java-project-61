@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     id 'application'
+    id 'checkstyle'
 }
 
 group = 'hexlet.code'
@@ -8,6 +9,10 @@ version = '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
+}
+
+application {
+    mainClass = 'io.hexlet.App'
 }
 
 dependencies {
@@ -29,4 +34,8 @@ compileJava {
 
 run {
     standardInput = System.in
+}
+
+checkstyle {
+    toolVersion '9.2.1'
 }
