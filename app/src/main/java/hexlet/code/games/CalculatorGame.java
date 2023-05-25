@@ -13,7 +13,6 @@ public final class CalculatorGame {
     public static void start() {
         String[][] arr = new String[Engine.ROUNDS][COUNT_OF_QUESTIONS_AND_ANSWERS];
         Random random = new Random();
-
         for (int i = 0; i < Engine.ROUNDS; i++) {
             String operator = OPERATORS[random.nextInt(OPERATORS.length)];
             int firstNumber = random.nextInt(MAX_NUMBER) + 1;
