@@ -34,6 +34,5 @@ public class App {
             case "0" -> scanner.close();
             default -> throw new Error("Error! Unknown command:(");
         }
-        scanner.close();
     }
 }
